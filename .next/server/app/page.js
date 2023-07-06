@@ -241,11 +241,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2110:
+/***/ 5569:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 125, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6249, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 125, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 7844, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 8782, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1522, 23))
@@ -349,6 +349,9 @@ function Home() {
         setTempo(textBox.target.value);
     };
     const getNoteValue = (duration)=>{
+        if (tempo === undefined) {
+            return "other";
+        }
         const quarterNoteMs = 60000 / tempo;
         console.log(`Quarter Note ms = ${quarterNoteMs}`);
         if (duration >= quarterNoteMs * 4 * .8 && duration <= quarterNoteMs * 4 * 1.2) {
